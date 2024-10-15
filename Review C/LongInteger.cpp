@@ -54,7 +54,7 @@ int compareNumbers(char *a, char *b, int lenA, int lenB) {
 LongInteger add(LongInteger a, LongInteger b) {
     LongInteger result;
     int maxSize = (a.size > b.size) ? a.size : b.size;
-    result.numbers = (char *)malloc(maxSize + 2); // +1 cho ky tu nho và +1 cho ky tu ket thuc
+    result.numbers = (char *)malloc(maxSize + 2); // +1 cho ky tu nho vÃ  +1 cho ky tu ket thuc
     result.size = 0;
 
     reverse(a.numbers, a.size);
@@ -100,7 +100,7 @@ LongInteger subtract(LongInteger a, LongInteger b) {
         result.numbers[result.size++] = diff + '0';
     }
 
-    // Loai bo cac so 0 thua khi ma xau truoc có chu so lon hon chu so xâu sau
+    // Loai bo cac so 0 thua khi ma xau truoc cÃ³ chu so lon hon chu so xÃ¢u sau
     while (result.size > 1 && result.numbers[result.size - 1] == '0') {
         result.size--;
     }
@@ -146,7 +146,7 @@ LongInteger sub(LongInteger a, LongInteger b){
     else if(a.negative != b.negative){
         // a,b khac dau
         if(a.negative == 1 && b.negative == 0){
-            // a âm, b duong
+            // a Ã¢m, b duong
             a.negative = 0;
             result = sum(a,b);
             result.negative = 1;
@@ -159,7 +159,7 @@ LongInteger sub(LongInteger a, LongInteger b){
         }
     }
     else{
-        // a,b âm
+        // a,b Ã¢m
         if(compareNumbers(a.numbers, b.numbers, a.size, b.size) >= 0){
             result = subtract(a,b);
             result.negative = 1;
